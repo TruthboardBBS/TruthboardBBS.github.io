@@ -1,0 +1,670 @@
+/*SkipOS*/
+
+@import url('https://basalt-team.github.io/Basalt/normalize-min.css');
+@import url('https://basalt-team.github.io/Basalt/basalt-bedrock-min.css');
+@import url('https://fonts.font.im/css2?family=Red+Hat+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.font.im/css2?family=Fira+Code:wght@400;700&display=swap');
+
+
+
+/*玄武岩*/
+@import url('https://basalt-team.github.io/Basalt/normalize-min.css');
+@import url('https://basalt-team.github.io/Basalt/basalt-bedrock-min.css');
+
+/* 临时引入字体，等待修复 */
+@import url('https://fonts.font.im/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap');
+@import url('https://fonts.font.im/css2?family=Noto+Serif+SC:wght@300;400;700;900&display=swap');
+
+:root:lang(cn) {
+    --UI-font-fallback: "Noto Sans SC", "方体", "PingFang SC", "黑体", "Heiti SC", "Microsoft JhengHei UI", "Microsoft JhengHei", Roboto, Noto, "Noto Sans CJK SC", sans-serif;
+}
+
+/* 临时修复评分模块 */
+div.page-rate-widget-box .rate-points {
+        background-color: transparent !important;
+}
+
+/* 独立信息模块 */
+.creditButtonStandalone {
+    width: var(--rate-module-button-size);
+    height: var(--rate-module-button-size);
+    display: inline-flex;
+    box-shadow: none;
+    background-color: rgb(var(--rate-module-background-color));
+    border: none;
+    border-radius: 0;
+    margin: 0.25rem 0;
+    padding: 0.325em;
+    text-align: center;
+}
+.creditButtonStandalone > p {
+    display: contents;
+}
+.creditButtonStandalone > p > a {
+    display: block;
+    position: relative;
+    width: 100%; height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: transparent!important;
+    background-color: transparent;
+    box-sizing: border-box;
+    transition: all 0.095s linear;
+}
+.creditButtonStandalone > p > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.095s linear;
+    background-color: rgb(var(--basalt-UI-dark-palette));
+}
+.creditButtonStandalone > p > a::after {
+    content: "";
+    display: block;
+    background-color: rgb(var(--basalt-light-text-color));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-size: 40%;
+    mask-size: 40%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-image: var(--vote-info-mask);
+    mask-image: var(--vote-info-mask);
+    -webkit-mask-size: 27.5%;
+    mask-size: 27.5%;
+}
+.creditButtonStandalone > p > a:is(:hover, :focus)::before {
+    background-color: rgb(var(--basalt-focus-color));
+}
+/*xx OS版式*/
+:root {
+    --basalt-primary-color: 36,35,50;
+    --basalt-secondary-color: 25,25,39;
+    --basalt-tertiary-color: 50,52,72;
+    --basalt-main-text-color: 218,218,232;
+    --basalt-light-text-color: var(--basalt-main-text-color);
+    --basalt-sub-text-color: 137,185,210;
+    --basalt-overtone: 10,14,19;
+    --basalt-undertone: 4,225,195;
+    --basalt-bright-element-color: var(--basalt-undertone);
+    --basalt-dark-element-color: 0,147,151;
+ 
+    --basalt-UI-blur: 0.425rem;
+    --basalt-UI-opacity: 0.6875;
+    --selection-text-color: var(--basalt-overtone);
+ 
+    --header-font-primary: "Red Hat Display", "Noto Sans SC";
+    --UI-font-primary: "Fira Code", "Noto Sans SC";
+    --mono-font-primary: Menlo, Monaco, Consolas, "Lucida Console", "Ubuntu Mono","Fira Code", "Noto Serif SC";
+ 
+    --header-border-width: 0rem;
+    --header-title: 'TruthBoard';
+    --title-size: 1.25rem;
+    --subtitle-size: 0rem;
+    --side-bar-button-height: 50vh;
+    --user-button-width: 2rem;
+    --header-UI-dropdown-font-size: calc(var(--header-UI-font-size) * 1.125);
+    --top-bar-dropdown-link-color-hover: var(--basalt-overtone);
+    --search-icon-color-hover: var(--top-bar-dropdown-link-color-hover);
+    --login-status-text-color-hover: var(--top-bar-dropdown-link-color-hover);
+    --side-bar-link-color-hover: var(--basalt-overtone);
+    --header-logo-size: 67.5%;
+    --header-logo: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1415.1' height='1412.9'%3E%3Cpath d='m661 1412-40-4a707 707 0 0 1-497-302c0-1 267-155 268-154l29 49 28 49 6-9a13879 13879 0 0 0 143-221l49-75 5-8h-11a1845 1845 0 0 0-94 5 5283 5283 0 0 1-154 8 29826 29826 0 0 1-113 7 2095 2095 0 0 0 56 98L69 1009a716 716 0 0 1-19-566A708 708 0 0 1 649 0h3v309H538l84 166 85 166 85-166 85-166H762V0l8 1 28 3a707 707 0 0 1 547 1006l-267-155a2647 2647 0 0 1 56-98l-28-2a2910 2910 0 0 1-131-7 1125 1125 0 0 0-62-3 11934 11934 0 0 0-140-8h-11l6 8a24452 24452 0 0 0 192 296l5 9 29-49 28-49c1-1 266 152 269 154a709 709 0 0 1-629 306z' style='fill:%23fff;stroke-width:.80000001'/%3E%3C/svg%3E");
+ 
+    --main-content-width: 49.5rem;
+    --main-content-top-margin: 1.25rem;
+    --main-content-side-margin: 0.875rem;
+    --side-bar-width: 16.5rem;
+    --bottom-area-background-color: var(--basalt-secondary-color), var(--basalt-UI-opacity);
+    --license-area-logo-size: 1.75rem;
+    --bottom-area-padding: calc(var(--true-font-size)*1.5);
+ 
+    --rate-module-cancel-color: var(--basalt-undertone);
+    --hr-color: var(--general-border-color);
+    --tab-background-color: var(--basalt-background-color);
+    --tab-selected-background-color: var(--tab-hover-background-color);
+    --tab-focus-text-color: var(--basalt-overtone);
+ 
+    /*----SkipOS-specific variables----*/
+ 
+    --desktop-time: '12:30';
+    --desktop-wallpaper: url("https://scp-wiki.wdfiles.com/local--files/theme%3Askipos/skip-default.jpg");
+    --window-radius: 0.875rem;
+    --window-shadow: 0 0 0.625rem rgb(var(--basalt-UI-dark-palette),0.5);
+    --window-border-width: 0.125rem;
+    --window-buttons: radial-gradient(circle at 1rem 50%, rgb(var(--basalt-cancel-color)) 0.35rem, rgb(0,0,0,0) 0.375rem), radial-gradient(circle at 2.125rem 50%, rgb(var(--basalt-alternate-color)) 0.35rem, rgb(0,0,0,0) 0.375rem), radial-gradient(circle at 3.25rem 50%, rgb(var(--basalt-positive-color)) 0.35rem, rgb(0,0,0,0) 0.375rem);
+}
+ 
+/*----------------*/
+/*----LAYOUT----*/
+/*----------------*/
+ 
+/* Workaround for iOS broken fixed background-attachment */
+body:not(#interwiki body)::before {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--desktop-wallpaper);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+ 
+/* Offloading backdrop filter here to allow nested blur */
+#header { background: transparent; }
+#header-extra-div-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(var(--header-background-color), var(--basalt-UI-opacity));
+    -webkit-backdrop-filter: blur(var(--basalt-UI-blur));
+    backdrop-filter: blur(var(--basalt-UI-blur));
+    z-index: -1;
+}
+#header-extra-div-2 {
+    grid-area: search;
+    position: relative;
+    pointer-events: none;
+}
+#header-extra-div-2 span {
+    content: var(--desktop-time);
+    position: absolute;
+    font-size: calc(var(--header-UI-font-size)*1.125);
+    right: calc(var(--search-button-width) + 1ex);
+    display: flex;
+    height: 100%; width: max-content;
+    align-items: center;
+}
+#header-extra-div-2 span::before { content: var(--desktop-time); }
+ 
+#header#header h1 a::before {
+    transition: none;
+    transform: none;
+}
+#top-bar div[class*="top-bar"] > ul > li {
+    flex-basis: calc(var(--header-UI-font-size)*2.25);
+}
+#top-bar div[class*="top-bar"] > ul > li > a {
+    font-weight: normal;
+    text-transform: capitalize;
+}
+#top-bar div[class*=top-bar] ul li ul li a {
+    padding: calc(var(--header-UI-dropdown-font-size) * 0.575) calc(var(--header-UI-dropdown-font-size) * 1.05);
+}
+ 
+/*-----------------*/
+/*----SIDEBAR----*/
+/*-----------------*/
+ 
+#side-bar, #interwiki { --true-font-size: 0.825rem; }
+ 
+@media only screen and (min-width: 1025px) {
+    :root { --side-bar-button-width: 0rem; }
+    #side-bar::before, #side-bar::after {
+        width: 2rem;
+        top: calc((100vh - var(--side-bar-button-height))/2 + var(--header-final-height)/2);
+        height: var(--side-bar-button-height);
+        transition: opacity 0.175s linear 0.125s, width 0.125s linear 0.3s;
+    }
+    #side-bar#side-bar::before {
+        background-color: rgb(var(--side-bar-background-color), var(--basalt-UI-opacity));
+        height: var(--side-bar-button-height);
+        border-radius: 0 var(--window-radius) var(--window-radius) 0;
+    }
+    #side-bar:is(:hover, focus-within)::before,
+    #side-bar:is(:hover, focus-within)::after {
+        opacity: 0;
+        width: 0rem;
+    }
+}
+ 
+:is(#side-bar, #interwiki) .heading { text-transform: capitalize; }
+ 
+/*--------------*/
+/*----MAIN----*/
+/*--------------*/
+ 
+#page-title {
+    position: relative;
+    background-color: rgb(var(--basalt-UI-dark-palette));
+    font-size: 1.25em;
+    text-align: center;
+    padding: 0.25rem 0.45rem;
+    border: none;
+    border-radius: var(--window-radius) var(--window-radius) 0 0;
+}
+#page-title::after { content: ".ftml"; margin-inline-start: -0.425ex; }
+#page-title::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 4.5rem;
+    height: 100%;
+    background: var(--window-buttons);
+}
+ 
+#breadcrumbs {
+    background: rgb(var(--basalt-secondary-color));
+    padding: 0.25rem 0.625rem;
+}
+#breadcrumbs, .pseudocrumbs { font-family: var(--UI-font); }
+:is(#breadcrumbs, .pseudocrumbs) a {
+    display: inline-block;
+    color: rgb(var(--basalt-main-text-color));
+    background-color: rgb(var(--basalt-background-color));
+    text-decoration: none;
+    padding: 0.175em 0.625em;
+    margin: 0.125rem 0;
+    border-radius: var(--window-radius);
+    transition: background-color 0.125s ease-out;
+}
+:is(#breadcrumbs, .pseudocrumbs) a:is(:hover, :focus) {
+    color: rgb(var(--basalt-overtone));
+    background-color: rgb(var(--link-color));
+}
+ 
+#page-content {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(var(--basalt-background-color),var(--basalt-UI-opacity));
+    border-radius: 0 0 var(--window-radius) var(--window-radius);
+}
+ 
+/*-----------------------------------------*/
+ 
+#main-content > .page-tags > span a,
+#more-options-button:is(:hover,:focus),
+#delete-button:is(:hover,:focus),
+input[type="checkbox"], [type="radio"],
+#edit-page-form .wd-editor-toolbar-panel a,
+#revision-list .page-history tr[id*="revision-row"] td:nth-child(3) > span {
+    --basalt-light-text-color: var(--basalt-overtone);
+}
+ 
+#main-content > .page-tags > span a {
+    border-radius: var(--window-radius);
+    padding: 0.25em 0.75em;
+}
+ 
+div[id*="page-options-bottom"] {
+    --po-padding: 0.875rem;
+    border-radius: var(--window-radius);
+    box-shadow: var(--window-shadow);
+}
+#page-options-bottom-2 {
+    padding-top: var(--po-padding);
+    margin-block-start: 0.875rem;
+}
+ 
+#more-options-button, #delete-button {
+    border-radius: calc(var(--window-radius)*0.375);
+}
+#delete-button {
+    inset-block-start: var(--po-padding);
+    height: calc(100% - var(--po-padding)*2);
+}
+ 
+#action-area a.action-area-close { border-radius: calc(var(--window-radius)*0.5); }
+ 
+#revision-list, #main-content .page-source {
+    background-color: rgb(var(--header-background-color), var(--basalt-UI-opacity));
+    border-radius: var(--window-radius);
+    padding: 1rem 1.25rem;
+}
+ 
+/*--------------------------------------------------*/
+/*--------------------------------------------------*/
+/*--------------------------------------------------*/
+ 
+/*-----------------------*/
+/*----IMAGE BLOCK----*/
+/*-----------------------*/
+ 
+#content-wrap {
+    counter-reset: image-count;
+}
+.image-block, .scp-image-block {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.375rem;
+    align-items: center;
+    border-bottom: none;
+    padding: 0.375rem 0 0.25rem;
+    background-color: rgb(var(--basalt-UI-dark-palette));
+    border-radius: calc(var(--window-radius)*0.75);
+    box-shadow: var(--window-shadow);
+}
+:is(.image-block, .scp-image-block) :is(.image-caption, .scp-image-caption) { background: transparent; }
+:is(.image-block, .scp-image-block)::before {
+    content: counter(image-count, decimal-leading-zero) ".mci";
+    display: block;
+    width: max-content;
+    font-size: 0.75em;
+    padding: 0.325em 0.625em;
+    counter-increment: image-count;
+    font-family: var(--UI-font);
+    background: rgb(var(--image-caption-background-color));
+    border-radius: calc(var(--window-radius)*0.5);
+}
+:is(.image-block, .scp-image-block)::after {
+    content: "";
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin: 0 0.75rem;
+    background: rgb(var(--basalt-alternate-color));
+    border-radius: 2rem;
+    order: -1;
+}
+ 
+/*-----------------------*/
+/*----RATE MODULE----*/
+/*-----------------------*/
+ 
+div.page-rate-widget-box, div.rate-box-with-credit-button {
+    border-radius: calc(var(--window-radius)*0.425);
+    box-shadow: var(--window-shadow);
+}
+ 
+/*-----------------------*/
+/*----BLOCKQUOTE----*/
+/*-----------------------*/
+ 
+blockquote, div.blockquote {
+    background-color: rgb(var(--blockquote-background-color),var(--basalt-UI-opacity));
+    border-radius: var(--window-radius);
+    box-shadow: var(--window-shadow);
+}
+ 
+/*--------------*/
+/*----TABLE----*/
+/*--------------*/
+ 
+#page-content table:not(.form), table.wiki-content-table {
+    border-collapse: separate;
+    box-shadow: var(--window-shadow);
+    border-radius: var(--window-radius);
+}
+#page-content table:not(.form) tbody,
+table.wiki-content-table tbody { border-radius: inherit; }
+:is(#page-content table:not(.form), table.wiki-content-table) tr:first-child {
+    border-start-start-radius: inherit;
+    border-start-end-radius: inherit;
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr:last-child {
+    border-end-start-radius: inherit;
+    border-end-end-radius: inherit;
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr:first-child > *:first-child {
+    border-start-start-radius: inherit;
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr:first-child > *:last-child {
+    border-start-end-radius: inherit;
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr:last-child > *:first-child {
+    border-end-start-radius: inherit;
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr:last-child > *:last-child {
+    border-end-end-radius: inherit;
+}
+ 
+:is(#page-content table:not(.form), table.wiki-content-table) :is(th, td) {
+    border: none;
+    padding: 0.675em 1.25em;
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr {
+    background: rgb(var(--basalt-background-color),var(--basalt-UI-opacity));
+}
+:is(#page-content table:not(.form), table.wiki-content-table) tr:nth-of-type(2n) {
+    background: rgb(var(--basalt-secondary-color),var(--basalt-UI-opacity));
+}
+ 
+/*-------------*/
+/*----TABS----*/
+/*-------------*/
+ 
+div.yui-navset {
+    box-shadow: var(--window-shadow);
+    border-radius: var(--window-radius);
+}
+ 
+.yui-navset.yui-navset-top > ul.yui-nav {
+    --general-border-color: var(--basalt-UI-dark-palette);
+    grid-gap: 0.375rem;
+    padding: 0.375rem;
+    border-radius: var(--window-radius) var(--window-radius) 0 0;
+}
+.yui-navset.yui-navset-top > ul.yui-nav > li {
+    border-radius: calc(var(--window-radius) - 0.375rem);
+    overflow: hidden;
+}
+.yui-navset.yui-navset-top > ul.yui-nav > li.selected::after { content: unset; }
+ 
+.yui-navset.yui-navset-top .yui-content { position: relative; border: none; }
+div.yui-content::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 0 0 var(--window-radius) var(--window-radius);
+    -webkit-backdrop-filter: blur(var(--basalt-UI-blur));
+    backdrop-filter: blur(var(--basalt-UI-blur));
+    z-index: -1;
+}
+ 
+/*---------------------*/
+/*----FOOTNOTES----*/
+/*---------------------*/
+ 
+.bibitems, .footnotes-footer {
+    border-radius: var(--window-radius);
+    box-shadow: var(--window-shadow);
+}
+.bibitems::before, .footnotes-footer::before {
+   content: unset;
+}
+ 
+.bibitems .title, .footnotes-footer .title {
+    text-transform: initial;
+    display: inline-flex;
+    align-items: center;
+    border-radius: calc(var(--window-radius)*0.5);
+    padding-inline-end: 1em;
+    margin-inline-start: calc(var(--window-radius) + 0.125em);
+}
+.bibitems .title::before,
+.footnotes-footer .title::before {
+    content: "";
+    display: inline-block;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin: 0 0.325rem;
+    background: rgb(var(--basalt-alternate-color));
+    border-radius: 2rem;
+}
+ 
+.hovertip {
+    border-radius: calc(var(--window-radius)*0.675);
+    --general-border-color: none;
+}
+.hovertip .content {
+    padding: 0.5em 0.675em;
+}
+.hovertip .content .footnote::before, .hovertip .content .reference::before { content: unset; }
+.hovertip .content .footnote .f-heading, .hovertip .content .reference .r-heading {
+    border-radius: calc(var(--window-radius)*0.375);
+    inset-block-start: -0.875em;
+    inset-inline-start: -0.375rem;
+}
+/*--------------------------*/
+/*----CUSTOM SYNTAX----*/
+/*--------------------------*/
+ 
+[class^="skip_"] {
+    box-shadow: var(--window-shadow);
+    border-radius: var(--window-radius);
+    background-color: rgb(var(--basalt-background-color));
+    padding: 0.5rem 1.5rem;
+    margin: 1.5rem 0;
+}
+ 
+.skip_box, .skip_side {
+    position: relative;
+}
+.skip_box::before,
+.skip_side::before {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 2rem;
+    position: relative;
+    margin-inline-start: -0.5rem;
+    margin-block-end: -0.75rem;
+    background: var(--window-buttons);
+}
+ 
+.skip_box.terminal {
+    position: relative;
+    font-family: var(--mono-font);
+    background-color: rgb(var(--basalt-UI-dark-palette));
+}
+.skip_box.terminal::after {
+    content: "终端";
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.875rem 5.125rem 0;
+}
+ 
+div.skip_window {
+    position: relative;
+    padding-top: 0;
+}
+.skip_window::before {
+    content: attr(data-title);
+    font-family: var(--header-font);
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    background-color: rgb(var(--basalt-UI-dark-palette));
+    text-align: center;
+    min-height: var(--window-radius);
+    padding: 0.625em 4rem;
+    margin: 0 -1.5rem;
+    border-radius: var(--window-radius) var(--window-radius) 0 0;
+}
+.skip_window::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0.5rem;
+    inset-block-start: 0;
+    width: 4rem;
+    height: 2.5rem;
+    background: var(--window-buttons);
+}
+ 
+div.skip_float {
+    font-size: 0.9125em;
+    background-color: rgb(var(--blockquote-background-color),var(--basalt-UI-opacity));
+    -webkit-backdrop-filter: blur(var(--basalt-UI-blur));
+    backdrop-filter: blur(var(--basalt-UI-blur));
+    float: left;
+    width: calc(var(--main-content-width)/2.25);
+    box-sizing: border-box;
+    margin: 0.25rem 1.25rem;
+    margin-left: clamp(calc(var(--main-content-width)/-4.5),calc((87.5vw - 95%)/-2), 0rem);
+}
+div.skip_float.right {
+    float: right;
+    margin-left: 1.25rem;
+    margin-right: clamp(calc(var(--main-content-width)/-4.5),calc((87.5vw - 95%)/-2), 0rem);
+}
+@media only screen and (max-width: 640px) {
+    #page-content div.skip_float {
+        float: none;
+        margin: 0.5rem auto;
+        width: 100%;
+    }
+}
+ 
+/*------------------------------------*/
+ 
+.anchor {
+    position: relative;
+    height: 0;
+    z-index: 5;
+}
+ 
+div.skip_side {
+    font-size: 0.875em;
+    position: absolute;
+    top: 0;
+    left: calc(100% + var(--main-content-side-margin) + 0.75rem);
+    width: min(calc((100vw - var(--main-content-width))/2 - 1rem), 75%);
+    padding: 0.325rem 0.875rem;
+    margin: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+div.skip_side::-webkit-scrollbar { width: 0rem; }
+@media (max-width: 1280px) {
+    .anchor { pointer-events: none; filter: drop-shadow(var(--window-shadow)); }
+    div.skip_side {
+        pointer-events: auto;
+        width: min(calc(var(--main-content-width)/2), 72.5%);
+        left: initial;
+        box-shadow: none;
+        right: calc((100vw - 100%)/-2 + var(--main-content-side-margin)/1.5);
+        clip-path: inset(0 0 0 calc(100% - var(--window-radius)*2) round var(--window-radius));
+        border-top-width: 0;
+        transition: clip-path 0.25s ease-out;
+    }
+    div.skip_side::before {
+        opacity: 0;
+    }
+    div.skip_side::after {
+        content: "";
+        position: absolute;
+        top: calc(var(--window-radius)/1.675);
+        right: calc(var(--window-radius)/1.675);
+        height: 0.75rem;  width:  0.75rem;
+        border-radius: 1rem;
+        background-color: rgb(var(--basalt-positive-color));
+        opacity: 1;
+        transition: opacity 0.1s ease-out;
+    }
+    div.skip_side > * {
+        opacity: 0;
+        transition: opacity 0.125s ease-out;
+     }
+ 
+    div.skip_side:is(:hover, :focus-within) {
+        border-top-width: 0.25rem;
+        clip-path: inset(0);
+    }
+    div.skip_side:is(:hover, :focus-within)::after {
+        opacity: 0;
+    }
+    div.skip_side:is(:hover,:focus-within) > *,
+    div.skip_side:is(:hover,:focus-within)::before { opacity: 1; }
+}
